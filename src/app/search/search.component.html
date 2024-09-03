@@ -1,6 +1,5 @@
-<main class="search-container">
-  <h1>RxJs Search and Data Combination</h1>
-  <div>
+<div class="search-container">
+  <div class="input">
     <input
       type="text"
       placeholder="Search for items..."
@@ -9,9 +8,19 @@
       #searchInput
     />
   </div>
-  <ul>
+  @if(!loading && !error && items) {
+  <div class="data">
     @for (item of items; track $index) {
-    <li>{{ item }}</li>
+    <p>Search matched {{ item }}</p>
     }
-  </ul>
-</main>
+  </div>
+  } @if (loading) {
+  <div class="loading">
+    <p>Loading...</p>
+  </div>
+  } @if (error) {
+  <p class="error">Error: {{ error }}</p>
+  } @if (items.length === 0) {
+  <p class="not-found">{{ notFound }}</p>
+  }
+</div>
