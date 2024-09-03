@@ -1,16 +1,17 @@
 @if(loadingUserDetails || loadingUserPosts) {
-  <div>
-    @if (loadingUserDetails) {
-    <p>Loading user details...</p>
-    } @if(loadingUserPosts) {
-    <p>Loading user posts...</p>
-    }
-  </div>
-  } @if(error) {
-  <div>
-    <p class="error">Error: {{ error }}</p>
-  </div>
-  } @if (!loadingUserDetails && !loadingUserPosts && combinedData) {
+<div class="loading-div">
+  @if (loadingUserDetails) {
+  <p class="loading">Loading user details...</p>
+  } @if(loadingUserPosts) {
+  <p class="loading">Loading user posts...</p>
+  }
+</div>
+} @if(error) {
+<div>
+  <p class="error">Error: {{ error }}</p>
+</div>
+} @if (!loadingUserDetails && !loadingUserPosts && combinedData) {
+<div class="details">
   <h2>User Details</h2>
   <p>Name: {{ combinedData.user.name }}</p>
   <p>Email: {{ combinedData.user.email }}</p>
@@ -21,4 +22,6 @@
     <li>{{ post }}</li>
     }
   </ul>
-  }
+</div>
+
+}

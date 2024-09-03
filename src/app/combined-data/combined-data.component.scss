@@ -1,0 +1,31 @@
+.loading-div {
+  font-size: 2rem;
+
+  .loading {
+    color: #ff6d45;
+  }
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 3rem;
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 2rem;
+  }
+
+  ul {
+    list-style-type: none;
+
+    li {
+      font-size: 2rem;
+    }
+  }
+}
