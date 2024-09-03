@@ -1,17 +1,2 @@
-<main class="search-container">
-  <h1>RxJs Search and Data Combination</h1>
-  <div>
-    <input
-      type="text"
-      placeholder="Search for items..."
-      id="search"
-      name="search"
-      #searchInput
-    />
-  </div>
-  <ul>
-    @for (item of items; track $index) {
-    <li>{{ item }}</li>
-    }
-  </ul>
-</main>
+<app-search />
+<app-combined-data />
